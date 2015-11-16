@@ -9,11 +9,13 @@
 ### 模块化加载
 
 helloworld.js
+
 function sayhello(){console.log('hello');}
 exports.helloworld = sayhello;
 
 
 app.js
+
 var helloworld = reuired('helloworld');
 consolo.log(helloworld.sayhello());
 
