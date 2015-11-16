@@ -11,12 +11,14 @@
 helloworld.js
 
 function sayhello(){console.log('hello');}
+
 exports.helloworld = sayhello;
 
 
 app.js
 
 var helloworld = reuired('helloworld');
+
 consolo.log(helloworld.sayhello());
 
 ### 加载策略 - 原生模块module实现加载文件模块的工作，并且在启动时已经被加载，进程直接调用到runMain静态方法。
