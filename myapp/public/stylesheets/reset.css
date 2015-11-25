@@ -1,0 +1,269 @@
+html,
+body {
+  font-family: Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 100%;
+}
+html,
+body,
+html,
+div,
+p,
+strong,
+span,
+em,
+i,
+img,
+dl,
+ol,
+ul,
+li,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+}
+ol,
+ul,
+li {
+  list-style: none;
+}
+a {
+  color: #0082e5;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 10px 0;
+}
+dt {
+  font-weight: normal;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.disable {
+  color: #999;
+  cursor: default;
+}
+.radio label.disable,
+.checkbox label.disable {
+  cursor: default;
+}
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #007bd8;
+  border-color: #0074cc;
+  border-radius: 0;
+}
+html input.error,
+html textarea.error {
+  border-color: #ee5238;
+  box-shadow: 0 0 2px #ee5238 inset;
+  out-line: 2px solid #ee5238;
+  outline-color: #ee5238;
+}
+.select-tip,
+.name-tip,
+.admin-tip,
+.pwd-tip {
+  margin-top: 5px;
+  color: #666;
+}
+.select-tip.red,
+.name-tip.red,
+.admin-tip.red,
+.pwd-tip.red {
+  color: #f76120;
+}
+.select-radio {
+  margin-right: 25px;
+  cursor: default;
+}
+.select-radio input[type="radio"] {
+  width: 20px;
+}
+#popup-dialog[aria-hidden=false],
+#modal-buy[aria-hidden=false],
+.modal[aria-hidden=false] {
+  display: block;
+  text-align: center;
+}
+.modal[aria-hidden=false] .modal-dialog {
+  display: inline-block;
+  margin: 40px auto;
+  text-align: left;
+  min-width: 600px;
+  width: auto;
+}
+.modal[aria-hidden=false] .modal-dialog .modal-content {
+  border-radius: 0px;
+}
+.modal[aria-hidden=false] .modal-dialog.login-dialog {
+  min-width: 0;
+}
+.modal-content .modal-body {
+  min-height: 100px;
+}
+.modal-content .modal-body,
+.modal-content .modal-info {
+  font-size: 13px;
+  font-family: "Microsoft Yahei", "Hiragino Sans GB", "Helvetica Neue", Arial, sans-serif;
+}
+.modal-content .modal-header {
+  background-color: #fbfbfb;
+}
+.modal-content .modal-header h4 {
+  text-align: center;
+  margin: 0;
+  line-height: 1.5;
+  font-size: 15px;
+  font-family: "Microsoft Yahei", "Hiragino Sans GB", "Helvetica Neue", Arial, sans-serif;
+}
+.modal-content .modal-footer {
+  margin-top: 0;
+  text-align: center;
+}
+.modal-content .modal-footer button.btn {
+  min-width: 106px;
+}
+.modal-content .modal-footer #modal-return {
+  margin-right: 40px;
+}
+.dropdown-toggle .caret {
+  position: absolute;
+  top: 16px;
+  right: 8px;
+}
+.high-light {
+  color: #0082e5;
+}
+.red-light {
+  color: #812626;
+}
+.disable-light {
+  color: #999;
+}
+.meituan-red {
+  color: #f76120;
+}
+.popupdialog-container {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  height: 100%;
+  overflow: auto;
+  overflow-y: scroll;
+  text-align: center;
+}
+.popupdialog-container .popupdialog {
+  position: relative;
+  display: inline-block;
+  min-height: 200px;
+  min-width: 600px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #999;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  font-family: "Microsoft Yahei", "Hiragino Sans GB", "Helvetica Neue", Arial, sans-serif;
+}
+.popupdialog-container .popupdialog .popup-header {
+  min-height: 40px;
+  background-color: #fbfbfb;
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.popupdialog-container .popupdialog .popup-header h4 {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 15px;
+}
+.popupdialog-container .popupdialog .popup-content {
+  min-height: 100px;
+  position: relative;
+  padding: 20px;
+  text-align: left;
+}
+.popupdialog-container .popupdialog .modal-info {
+  text-align: left;
+}
+.popupdialog-container .popupdialog .popup-footer {
+  padding: 19px 20px 20px;
+  border-top: 1px solid #e5e5e5;
+  text-align: center;
+}
+.popupdialog-container .popupdialog .popup-footer .btn {
+  padding: 7px 30px;
+  margin: 0 30px;
+}
+.popupdialog-container .popupdialog .popup-close {
+  position: absolute;
+  padding: 10px;
+  top: 0;
+  right: 0;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+  color: #999;
+  cursor: pointer;
+}
+#sem-maidian {
+  display: none;
+}
+.clear-padding {
+  padding: 0;
+}
+.triggle-right-up,
+.triggle-left-up {
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+.triggle-right-up {
+  border-width: 0 6px 6px 0;
+}
+.triggle-left-up {
+  border-width: 6px 6px 0 0;
+}
+/**datepicker css**/
+.input-daterange .input-small {
+  width: 125px;
+  border: 1px solid #ccc;
+  text-align: left;
+  text-indent: 1em;
+}
+.input-daterange .fa-calendar {
+  margin-left: -22px;
+  color: #0082e5;
+}
+.input-daterange .input-group-addon {
+  line-height: initial;
+}
+.input-daterange input {
+  height: 36px;
+  padding-left: 6px;
+  padding-right: 6px;
+  border-radius: initial;
+}

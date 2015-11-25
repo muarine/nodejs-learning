@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html class="">
+<head>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+	<meta name="renderer" content="webkit">
+	<title>登录 - <%=title%></title>
+	<meta name="keywords" content="公众号平台">
+	<meta name="description" content="<%=description%>">
+	<!--[if lt IE 8]>
+	<meta http-equiv="Refresh" content="0; url=/browsers">
+	<![endif]-->
+	<link rel="shortcut icon" href="media/images/favicon.ico">
+	<!-- Le styles -->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" media="screen" href="media/lib/bootstrap-3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" media="screen" href="media/css/main.css">
+	<link rel="stylesheet" media="screen" href="media/css/reset.css">
+	<script src="media/lib/jquery1.11.3/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body class="login">
+	<noscript unselectable="on" id="noscript">
+		&lt;div class="aw-404 aw-404-wrap container"&gt;
+		&lt;img src="https://www.wegene.com/static/common/no-js.jpg"&gt;
+		&lt;p&gt;你的浏览器禁用了JavaScript, 请开启后刷新浏览器获得更好的体验!&lt;/p&gt;
+		&lt;/div&gt;
+	</noscript>
+
+	<div id="wrapper">
+		<div class="aw-login-box">
+			<div class="mod-body clearfix">
+				<div class="content pull-left">
+					<h1 class="logo"><a href=""><img width="97" src="media/images/icon.png"></a></h1>
+					<form id="login_form" method="post" action="index.html">
+						<input type="hidden" name="return_url" value="https://www.wegene.com/">
+						<ul>
+							<li>
+								<input type="text" id="aw-login-user-name" class="form-control" placeholder="邮箱 / 用户名" name="user_name">
+							</li>
+							<li>
+								<input type="password" id="aw-login-user-password" class="form-control" placeholder="密码" name="password">
+							</li>
+							<li class="alert alert-danger hide error_message">
+								<i class="icon icon-delete"></i> <em></em>
+							</li>
+							<li class="last">
+								<a href="javascript:;" id="login_submit" class="pull-right btn btn-normal btn-success">登录</a>
+								<label class="hidden-xs">
+									<input type="checkbox" value="1" name="net_auto_login" checked="">
+									记住我							
+								</label>
+								<a class="hidden-xs" href="#">&nbsp;&nbsp;忘记密码</a>
+							</li>
+						</ul>
+					</form>
+				</div>
+			</div>
+			<div class="mod-footer">
+				<span>还没有账号?</span>&nbsp;&nbsp;
+				<a href="register.html">立即注册</a>&nbsp;&nbsp;<!-- •&nbsp;&nbsp; -->
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$("#login_submit").click(function(e){
+			// 检测参数
+			$("#login_form").submit();
+		});
+	</script>
+	</html>

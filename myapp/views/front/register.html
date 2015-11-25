@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html class="">
+<head>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+	<meta name="renderer" content="webkit">
+	<title>注册 - 智慧图公众号第三方平台</title>
+	<meta name="keywords" content="公众号平台">
+	<!--[if lt IE 8]>
+	<meta http-equiv="Refresh" content="0; url=/browsers">
+	<![endif]-->
+	<link rel="shortcut icon" href="media/images/favicon.ico">
+	<!-- Le styles -->
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" media="screen" href="media/lib/bootstrap-3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" media="screen" href="media/css/main.css">
+	<link rel="stylesheet" media="screen" href="media/css/reset.css">
+	<link rel="stylesheet" media="screen" href="media/css/base.css">
+	<script src="media/lib/jquery1.11.3/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="media/lib/bootstrap-3.3.5/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="media/lib/vue/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body class="login">
+	<noscript unselectable="on" id="noscript">
+		&lt;div class="aw-404 aw-404-wrap container"&gt;
+		&lt;img src="https://www.wegene.com/static/common/no-js.jpg"&gt;
+		&lt;p&gt;你的浏览器禁用了JavaScript, 请开启后刷新浏览器获得更好的体验!&lt;/p&gt;
+		&lt;/div&gt;
+	</noscript>
+	<div class="aw-register-box">
+		<div class="mod-head">
+			<a href=""><img width="97" src="media/images/icon.png" alt=""></a>
+			<h1 class="hidden-xs">注册新用户</h1>
+		</div>
+		<div class="mod-body">
+			<form class="aw-register-form" action="index.html" method="post" id="register_form">
+
+				<ul>
+					<li class="alert alert-danger hide error_message text-left">
+						<i class="icon icon-delete"></i> <em></em>
+					</li>
+					<li>
+						<input class="aw-register-name form-control" type="text" name="user_name" placeholder="用户名" tips="请输入一个 2-14 位的用户名" errortips="用户名长度不符合" value="">
+					</li>
+					<li>
+						<input class="aw-register-email form-control" type="text" placeholder="邮箱" name="email" tips="请输入你常用的电子邮箱作为你的账号" value="" errortips="邮箱格式不正确">
+					</li>
+					<li>
+						<input class="aw-register-pwd form-control" type="password" name="password" placeholder="密码" tips="请输入 6-16 个字符,区分大小写" errortips="密码不符合规则">
+					</li>
+
+					<li class="last">
+					<label><input type="checkbox" checked="checked" value="agree" name="agreement_chk"> 我同意</label>
+						<a href="login.html" class="pull-right">已有账号?</a>
+
+					</li>
+					<li class="clearfix">
+						<button class="btn btn-normal btn-success btn-block" type="submit">注册</button>
+					</li>
+				</ul>
+			</form>
+		</div>
+		<div class="mod-footer"></div>
+	</div>
+	<script type="text/javascript">
+
+$(document).ready(function ()
+{
+    $('.more-information-btn').click(function()
+    {
+        $('.more-information').fadeIn();
+        $(this).parent().hide();
+    });
+
+    verify_register_form('#register_form');
+
+    /* 注册页面验证 */
+    function verify_register_form(element)
+    {
+        $(element).find('[type=text], [type=password]').on({
+            focus : function()
+            {
+                if (typeof $(this).attr('tips') != 'undefined' && $(this).attr('tips') != '')
+                {
+                    $(this).parent().append('<span class="aw-reg-tips">' + $(this).attr('tips') + '</span>');
+                }
+            },
+            blur : function()
+            {
+                if ($(this).attr('tips') != '')
+                {
+                    switch ($(this).attr('name'))
+                    {
+                        case 'user_name' :
+                            var _this = $(this);
+                            $(this).parent().find('.aw-reg-tips').detach();
+                            if ($(this).val().length >= 0 && $(this).val().length < 2)
+                            {
+                                $(this).parent().find('.aw-reg-tips').detach();
+                                $(this).parent().append('<span class="aw-reg-tips aw-reg-err"><i class="aw-icon i-err"></i>' + $(this).attr('errortips') + '</span>');
+                                return;
+                            }
+                            if ($(this).val().length > 17)
+                            {
+                                $(this).parent().find('.aw-reg-tips').detach();
+                                $(this).parent().append('<span class="aw-reg-tips aw-reg-err"><i class="aw-icon i-err"></i>' + $(this).attr('errortips') + '</span>');
+                                return;
+                            }
+                            else
+                            {
+                                $.post(G_BASE_URL + '/account/ajax/check_username/', 
+                                {
+                                    username: $(this).val()
+                                }, function (result)
+                                {
+                                    if (result.errno == -1)
+                                    {
+                                        _this.parent().find('.aw-reg-tips').detach();
+                                        _this.parent().append('<span class="aw-reg-tips aw-reg-err"><i class="aw-icon i-err"></i>' + result.err + '</span>');
+                                    }
+                                    else
+                                    {
+                                        _this.parent().find('.aw-reg-tips').detach();
+                                        _this.parent().append('<span class="aw-reg-tips aw-reg-right"><i class="aw-icon i-followed"></i></span>');
+                                    }
+                                }, 'json');
+                            }
+                            return;
+
+                        case 'email' :
+                            $(this).parent().find('.aw-reg-tips').detach();
+                            var emailreg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+                            if (!emailreg.test($(this).val()))
+                            {
+                                $(this).parent().find('.aw-reg-tips').detach();
+                                $(this).parent().append('<span class="aw-reg-tips aw-reg-err"><i class="aw-icon i-err"></i>' + $(this).attr('errortips') + '</span>');
+                                return;
+                            }
+                            else
+                            {
+                                $(this).parent().find('.aw-reg-tips').detach();
+                                $(this).parent().append('<span class="aw-reg-tips aw-reg-right"><i class="aw-icon i-followed"></i></span>');
+                            }
+                            return;
+
+                        case 'password' :
+                            $(this).parent().find('.aw-reg-tips').detach();
+                            if ($(this).val().length >= 0 && $(this).val().length < 6)
+                            {
+                                $(this).parent().find('.aw-reg-tips').detach();
+                                $(this).parent().append('<span class="aw-reg-tips aw-reg-err"><i class="aw-icon i-err"></i>' + $(this).attr('errortips') + '</span>');
+                                return;
+                            }
+                            if ($(this).val().length > 17)
+                            {
+                                $(this).parent().find('.aw-reg-tips').detach();
+                                $(this).parent().append('<span class="aw-reg-tips aw-reg-err"><i class="aw-icon i-err"></i>' + $(this).attr('errortips') + '</span>');
+                                return;
+                            }
+                            else
+                            {
+                                $(this).parent().find('.aw-reg-tips').detach();
+                                $(this).parent().append('<span class="aw-reg-tips aw-reg-right"><i class="aw-icon i-followed"></i></span>');
+                            }
+                            return;
+
+                    }
+                }
+
+            }
+        });
+    }
+
+});
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "this is a test app",
+  "main": "server.js",
+  "dependencies": {
+    "express": "~4.13.3",
+    "ejs": "~2.3.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "debug"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "muarine",
+  "license": "v1.0"
+}
