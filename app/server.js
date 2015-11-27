@@ -1,20 +1,19 @@
-var path = require('path');
-var express =require('express');
-var app = express();
-var admin =require('./router/admin');
+ /**
+ * Module dependencies.
+ */
 
 
-app.locals.title = 'My App';
-//app.locals.strftime = require('strftime');
-app.locals.email = 'me@myapp.com';
+var express = require('express');
+var offical = require('./app.js');
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+var site_vhosts=[],vhosts;
 
-app.get('/',function(req,res){
-	res.send("Index");
-});
+// Virtual Hosts
+site_vhosts.push(express.vhost('localhost',offical));
+//site_vhosts.push(express.vhost('www.qinyh.com',offical));
 
-var server = app.listen(3000);
 
-app.use('/admin',admin);
+vhost=express.createServer.apply(this,site_vhosts);
+
+vhost.listen(80);
+console.log("Express router Listening on port 80");

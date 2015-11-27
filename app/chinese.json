@@ -1,0 +1,101 @@
+{
+
+    "index": {
+
+        "title": "首页 | 北京秦运恒信息技术有限公司",
+
+        "motto": "原来购物可以如此简单和生动",
+
+        "columns": [
+
+            {
+
+                "title": "最新产品",
+
+                "desc": "使用iPad展示商品为顾客提供更加丰富的渠道来探索和喜爱您的产品。",
+
+                "img": "/images/index/img1.png",
+
+                "href": "/products/"
+
+            },
+
+            {
+
+                "title": "解决方案",
+
+                "desc": "我们会与您一起找到适合您的解决方案，让您的事业蒸蒸日上。",
+
+                "img": "/images/index/img2.png",
+
+                "href": "/solutions/"
+
+            },
+
+            {
+
+                "title": "关于我们",
+
+                "desc": "年轻而专业。梦想加实干。敏捷和执着。这就是我们，您一定会喜欢跟我们合作。",
+
+                "img": "/images/index/img3.png",
+
+                "href": "/company/"
+
+            }
+
+        ]
+
+    },
+
+    "products": {
+
+        "title": "产品介绍 | 北京秦运恒信息技术有限公司",
+
+        "motto": "精益求精，宁缺毋滥",
+
+        "banner": "banner-2",
+
+        "columns": [
+
+            {
+
+                "title": "精品家具专家",
+
+                "desc": "苹果iPad上展现家具的全部风采，捕捉顾客的想象力和心，连样板间都可以展现上百种家具。",
+
+                "img": "/images/product/img1.png",
+
+                "href": "/products/furniture/"
+
+            },
+
+            {
+
+                "title": "葡萄酒指南",
+
+                "desc": "中国即将成为世界红酒消费第一大国，然而多数消费者只认得电视广告。有了这样的指南，您的好酒再也不愁无人问津。",
+
+                "img": "/images/product/img2.png",
+
+                "href": "/products/wine/"
+
+            },
+
+            {
+
+                "title": "服装时尚导购",
+
+                "desc": "顾客看到苹果iPad上的服装模特会动的那一刻，已经决定了您和其他店的区别。从今以后您的顾客可以和朋友一起坐着逛街了。",
+
+                "img": "/images/product/img3.png",
+
+                "href": "/products/clothes/"
+
+            }
+
+        ]
+
+    }
+
+]

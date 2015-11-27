@@ -1,0 +1,139 @@
+{
+
+    "/": {
+
+        "template": "index",
+
+        "data": "index"
+        
+    },
+
+    "/products": {
+
+        "template": "secondary",
+
+        "data": "products"
+
+    },
+
+    "/products/clothes": {
+
+        "template": "products",
+
+        "data": "clothes"
+
+    },
+
+    "/products/wine": {
+
+        "template": "products",
+
+        "data": "wine"
+
+    },
+
+    "/products/furniture": {
+
+        "template": "products",
+
+        "data": "furniture"
+
+    },
+
+    "/solutions": {
+
+        "template": "secondary",
+
+        "data": "solutions"
+
+    },
+
+    "/solutions/shop": {
+
+        "template": "solutions",
+
+        "data": "shop"
+
+    },
+
+    "/solutions/e-shop": {
+
+        "template": "solutions",
+
+        "data": "eshop"
+
+    },
+
+    "/solutions/next-gen": {
+
+        "template": "solutions",
+
+        "data": "nextgen"
+
+    },
+
+    "/company": {
+
+        "template": "secondary",
+
+        "data": "company"
+
+    },
+
+    "/company/team": {
+
+        "template": "about",
+
+        "data": "team"
+
+    },
+
+    "/company/ideals": {
+
+        "template": "company",
+
+        "data": "ideals"
+
+    },
+
+    "/company/contact": {
+
+        "template": "contact",
+
+        "data": "contact"
+
+    },
+
+    "/company/jobs": {
+
+        "template": "secondary",
+
+        "data": "jobs"
+
+    },
+
+    "/company/jobs/it": {
+
+        "template": "jobs",
+
+        "data": "it"
+
+    },
+
+    "/company/jobs/design": {
+
+        "template": "jobs",
+
+        "data": "design"
+
+    },
+
+    "/company/jobs/sales": {
+
+        "template": "jobs",
+
+        "data": "sales"
+
+    }
+
+}

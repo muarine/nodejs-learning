@@ -1,0 +1,26 @@
+#p-1.content
+  p= motto
+#main.content
+  - for (var i in columns)
+    - var last=(i<columns.length-1)?'':'last'
+    dl(class='#{last}')
+      dt
+        a(href='#{columns[i].href}')
+          img(src='#{columns[i].img}', width='276', height='164', alt='#{columns[i].title}')
+      dd
+        a(href='#{columns[i].href}')
+          span=columns[i].title
+        br
+        | #{columns[i].desc}
+.slider-wrapper.theme-custom
+  .slider-wrapper2
+  #slider.nivoSlider
+    img(src='../images/index/banner1.png', width='100%', height='366', alt='首页')
+    img(src='../images/index/banner2.png', width='100%', height='366', alt='首页')
+    img(src='../images/index/banner3.png', width='100%', height='366', alt='首页')
+  script(type='text/javascript', src='/js/jquery-1.6.1.min.js')
+  script(type='text/javascript', src='/js/jquery.nivo.slider.js')
+  script(type='text/javascript')
+    $(document).bind("ready",function() {
+      $('#slider').nivoSlider();
+    });
