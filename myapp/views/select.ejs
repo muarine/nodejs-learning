@@ -1,0 +1,37 @@
+<html>
+<head>
+	<link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen" />
+	<link href="/stylesheets/bootstrap-select.min.css" rel="stylesheet" media="screen" />
+	<script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/javascripts/bootstrap-select.min.js"></script>
+</head>
+<body>
+	<!-- 代码片断 ejs不能像javascript一样对json字符串自动转化成obj进行遍 -->
+	<form class="form-horizontal well" method="GET">
+		<select name="type" class="selectpicker show-tick" data-size="5" value="<%=search.type||''%>">
+			<option></option>
+			<% var tempData = data%>
+			<% for(var i in data.data){%>
+				 <option value="<%-data.data[i].code%>"><%-data.data[i].name%></option>
+			<%}%>
+		</select>
+	</form>
+
+	<!-- 代码片段 -->
+	<script type="text/javascript">
+	// console.log(<%-data%>);
+	var data = <%-JSON.stringify(data)%>;
+	for(var i in data.data){
+		console.log(data.data[i].code , data.data[i].name);
+		// $('.selectpicker').append('<option value="data.data[i].code">' + data.data[i].name + '</option>');
+	}
+	$(function(){
+		//下拉菜单
+		$('.selectpicker').selectpicker({noneSelectedText:'请选择'});
+		$('.selectpicker').selectpicker('val',$('.selectpicker').attr('value'));
+	})	
+	</script>
+
+</body>
+</html>

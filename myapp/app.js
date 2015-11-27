@@ -39,6 +39,7 @@ app.use('/admin',require('./routes/admin'));
 // var movie = require('./routes/movie');
 
 app.use('/movie',require('./routes/movie'));
+app.use('/front',require('./routes/front'));
 // app.get('/movie/add',movie.movieAdd);
 // app.post('/movie/add',movie.doMovieAdd);
 // app.get('/movie/:name',movie.movieAdd);
