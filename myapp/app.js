@@ -36,18 +36,13 @@ app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 app.use('/admin',require('./routes/admin'));
 
-var movie = require('./routes/movie');
+// var movie = require('./routes/movie');
 
-app.get('/movie/add',movie.movieAdd);
-app.post('/movie/add',movie.doMovieAdd);
-app.get('/movie/:name',movie.movieAdd);
-app.get('/movie/json/:name',movie.movieJSON);
-
-
-
-
-
-
+app.use('/movie',require('./routes/movie'));
+// app.get('/movie/add',movie.movieAdd);
+// app.post('/movie/add',movie.doMovieAdd);
+// app.get('/movie/:name',movie.movieAdd);
+// app.get('/movie/json/:name',movie.movieJSON);
 
 // 404错误处理 TODO ?????????????????????
 app.use(function(req, res, next) {

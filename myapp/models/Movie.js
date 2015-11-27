@@ -27,9 +27,8 @@ var Movie = mongodb.mongoose.model("Movie",MovieSchema);
 var MovieDAO = function(){};
 
 // CRUD
-MovieDAO.prototype.findByName = function(name,callback){
-	console.log('select name: %d' , name);
-	Movie.findOne({'name':name},function(err,obj){
+MovieDAO.prototype.findByName = function(query,callback){
+	Movie.findOne(query,function(err,obj){
 		callback(err,obj);
 	});
 };

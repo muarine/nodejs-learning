@@ -1,0 +1,21 @@
+<% include header.ejs %>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span8">
+<form>
+<fieldset>
+<legend><%=label%></legend>
+<div id="msg"></div>
+</fieldset>
+	
+<form>
+</div>
+</div>
+</div>
+
+<% include footer.ejs %>
+<script >
+	var movieList = <%-movieList%>;
+	// var movieList = "<%=movieList%>";
+	$('#msg').html(movieList);
+</script>

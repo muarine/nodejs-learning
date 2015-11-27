@@ -3,11 +3,11 @@ var router = express.Router();
 
 // middleware specific to this router
 router.use(function timeLog(req, res, next) {
-  console.log('Time: ', Date.now());
+  console.log('Admin Time: ', Date.now());
   next();
 })
 
-router.get('aa(cd)*',function(res,res){
+router.get('/aacd',function(res,res){
 
 	console.log('http method: %d',res.METHOD);
 	res.send('Admin Index Page');
